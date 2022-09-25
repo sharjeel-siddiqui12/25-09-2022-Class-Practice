@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+<body>
+    <h1>Temperature</h1>
+
+    <script>
+
+        let temp = [23 , 43 , 22 , 33 , 32 , 21 , 30 , 27];
+        let max = temp[0];
+        let min = temp[0];
+        let sum = 0;
+        let avrg;
+        let thresh = 22;
+        let upperThres = 0;
+        let lowerThres = 0;
+
+
+        if(temp.length){
+        for (let i = 0 ; i < temp.length ; i++){
+
+            if (temp[i] > thresh){
+                upperThres++;
+               
+            }
+            if (temp[i] < thresh){
+                lowerThres++
+                lowerThres / temp.length *100;
+            }
+            
+
+            if (temp[i] > max ){
+                 max =  temp[i];
+              
+            }
+            if (temp[i] < min  ){
+                min = temp[i]
+            }
+
+            sum = sum + temp[i];
+             avrg = sum / temp.length;
+
+
+
+        }
+    }
+        console.log("Maximum: ", max);
+        console.log("Minimum: ", min);
+        console.log("Average: ", avrg);
+
+        console.log("Upper Threshold", (upperThres/temp.length )* 100,"%");
+        console.log("Lower Threshold" , (lowerThres/temp.length)*100 , "%");
+
+    </script>
+</body>
+</html>
